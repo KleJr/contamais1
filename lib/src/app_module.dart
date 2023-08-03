@@ -3,12 +3,16 @@ import 'package:contamais1/src/setstate/myapp_page.dart';
 import 'package:contamais1/src/valuenotifier/valuenotifier_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'atom/reducer/atom_reducer.dart';
+
 class AppModule extends Module {
   @override
   List<Module> get imports => [];
 
   @override
-  void binds(Injector i) {}
+  void binds(Injector i) {
+    // i.addInstance<AtomReducer>(AtomReducer());
+  }
 
   @override
   void routes(r) {

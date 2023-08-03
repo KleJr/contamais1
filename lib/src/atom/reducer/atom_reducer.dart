@@ -9,4 +9,8 @@ class AtomReducer extends Reducer {
   void _increment() {
     counterState.value++;
   }
+
+  void dispose() {
+    super.dispose();
+  }
 }

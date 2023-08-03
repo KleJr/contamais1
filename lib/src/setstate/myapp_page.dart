@@ -59,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
               label: TextButton(
                 child: const Text('Value Notifier'),
                 onPressed: () {
-                  // Modular.to.pop();
+                  Navigator.of(context).pop();
+                  //Modular.to.pop();
                   Modular.to.pushNamed('/valueNotifier/');
                 },
               )),
@@ -68,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: TextButton(
                 child: const Text('Atom'),
                 onPressed: () {
+                  Navigator.of(context).pop();
                   // Modular.to.pop();
                   Modular.to.pushNamed('/atom/');
                 },
