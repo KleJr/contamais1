@@ -1,5 +1,8 @@
+import 'package:asp/asp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../atom/state/atom_states.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -35,8 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  int count = 0;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final counter = context.select(() => counterState.value);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -88,6 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text('$counter atom'),
+            RxBuilder(builder: (_) {
+              return Text('${counterState.value} Rx');
+            }),
           ],
         ),
       ),
